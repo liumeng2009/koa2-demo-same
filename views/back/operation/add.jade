@@ -1,0 +1,58 @@
+extends ../layout
+block content
+    .page-title
+        .title-env
+            h1.title
+                | 权限操作
+            p.description
+                | 各个功能权限所拥有的操作
+        .breadcrumb-env
+            ol.breadcrumb.bc-1
+                li
+                    a(href="/admin/main")
+                        i.fa-home
+                            | 首页
+                li
+                    a(href="#")
+                        | 用户管理
+                li
+                    a(href="/admin/operation")
+                        | 操作列表
+                li.active
+                    strong
+                        | 新增
+    .row
+        .col-md-12
+            .panel.panel-default
+                .panel-heading
+                    h3.panel-title
+                            | 新增
+                    .panel-options
+                        a(href="#",data-toggle="panel")
+                            span.collapse-icon
+                                | &ndash;
+                            span.expand-icon
+                                | +
+                        a(href="#",data-toggle="remove")
+                            | &times
+                .panel-body
+                    form#form1.validate(role="form",method="post",action="/admin/operation/add")
+                        .form-group
+                            label.control-label
+                                | 功能名称
+                            input#name.form-control(type="text",name="name",data-validate="required",data-message-required="非空",placeholder="操作名称")
+                        .form-group
+                            label.control-label
+                                | 功能
+                            input#code.form-control(type="text",name="code",data-validate="required",data-message-required="非空",placeholder="操作代号")
+                        .form-group
+                            label.control-label
+                                | 操作描述
+                            textarea#discription.form-control(cols="5",name="discription",placeholder="描述")
+                        .form-group
+                            button.btn.btn-success(type="submit")
+                                | 保存
+                            button.btn.btn-white(type="reset")
+                                | 重置
+block bottomJavascript
+    script(src="#{staticPath}xenon/assets/js/jquery-validate/jquery.validate.min.js")

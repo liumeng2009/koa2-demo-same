@@ -1,0 +1,43 @@
+.sidebar-menu.toggle-others.fixed
+    .sidebar-menu-inner
+        header.logo-env
+            .logo
+                a.logo-expanded(href="dashboard-1.html")
+                    img(src="#{staticPath}xenon/assets/images/logo@2x.png",with="80",alt="")
+                a.logo-collapsed(href="dashboard-1.html")
+                    img(src="#{staticPath}xenon/assets/images/logo-collapsed@2x.png",with="40",alt="")
+            .mobile-menu-toggle.visible-xs
+                a(href="#",data-toggle="user-info-menu")
+                    i.fa-bell-o
+                    span.badge.badge-success
+                        | 7
+                a(href="#",data-toggle="mobile-menu")
+                    i.fa-bars
+            .settings-icon
+                a(href="#",data-toggle="settings-pane",data-animate="true")
+                    i.linecons-cog
+        ul#main-menu.main-menu
+            li.has-sub.opened.expanded.active
+                a(href="/admin/users/list")
+                    i.linecons-cog
+                    span.title
+                        | 用户设置
+                ul
+                    li.active
+                        a(href="/admin/operation/list")
+                            span.title
+                                | 权限操作
+                    li
+                        a(href="/admin/funcs/list")
+                            span.title
+                                | 功能项
+            li.has-sub
+                a(href="javascript:void(0);")
+                    i.linecons-desktop
+                    span.title
+                        | 基本信息设置
+                ul
+                    li
+                        a(href="/admin/positions/list")
+                            span.title
+                                | 地点设置
